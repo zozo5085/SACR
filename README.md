@@ -2,6 +2,8 @@
 
 This is the Pytorch Implementation for 2026 ICIP paper.
 
+We're using **Python 3.9+** and **PyTorch 2.0+**.
+
 ## Installation
 
 1. Clone this repository.
