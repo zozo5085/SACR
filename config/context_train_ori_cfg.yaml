@@ -1,0 +1,35 @@
+DATASET:
+  NAME: 'context'
+  NUM_CLASSES: 59
+  DATAROOT: 'D:/SACR/datasets/PASCAL Context/mat2png/'
+  SCALE: [520, 520]
+  RATIO_RANGE: [0.5, 2.0]
+  CROP_SIZE: [480, 480]
+  CAT_MAX_RATIO: 0.75
+  IMG_NORM_CFG:
+    MEAN: [ 122.771, 116.746, 104.094 ]
+    STD: [ 68.501, 66.632, 70.323 ]
+    RGB: True
+  TEXT_WEIGHT: 'text/context_ViT16_clip_text.pth'
+  K: 6
+  THRESHOLD: 20
+  REDUCE_ZERO_LABEL: TRUE
+  IGNORE_INDEX: 255
+
+MODEL:
+  FEATURE_EXTRACTOR: 'vit'
+  TEXT_CHANNEL: 512
+  VISUAL_CHANNEL: 768
+  TRAINING: True
+
+TRAIN:
+  BATCH_SIZE: 16
+  MAX_EPOCH: 50
+  EPOCH: 50
+  LR: 0.001
+TEST:
+  BATCH_SIZE: 1
+
+EVAL_METRIC: "miou"
+SAVE_DIR: "experiments/context_rectification/"
+NUM_WORKERS: 4
