@@ -1,5 +1,7 @@
 # SACR: Structure-Aware Context Refinement for One-Stage Unsupervised Semantic Segmentation
 
+This is the Pytorch Implementation for 2026 ICIP paper
+
 ## Installation
 
 1. Clone this repository.
