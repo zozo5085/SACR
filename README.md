@@ -19,22 +19,22 @@ Please organize your datasets (VOC, COCO, etc.) under the data/ folder or modify
 ## Step 1: Extract Text Embeddings
 First, generate the CLIP text embeddings for your target dataset (e.g., VOC).
 ```bash
-  python utils/prompt_engineering.py --model ViT16 --class-set voc
-  # The Text Embeddings will be saved at 'text/voc_ViT16_clip_text.pth' 
-  # Options for class-set: voc, context, ade, city, stuff
+     python utils/prompt_engineering.py --model ViT16 --class-set voc
+     # The Text Embeddings will be saved at 'text/voc_ViT16_clip_text.pth' 
+     # Options for class-set: voc, context, ade, city, stuff
 ```
 ## Step 2: Extract Image-level Multi-label Hypothesis (Pseudo Labels)
 Generate the initial pseudo labels using CLIP-CAM or similar techniques.
 
 ```bash
-    python tools/pseudo_class.py --cfg config/voc_train_ori_cfg.yaml --model SACR
-    #The pseudo labels will be saved at 'text/voc_pseudo_label_SACR.json'
+     python tools/pseudo_class.py --cfg config/voc_train_ori_cfg.yaml --model SACR
+     # The pseudo labels will be saved at 'text/voc_pseudo_label_SACR.json'
 ```
 ## Step 3: Train SACR
 Train the refinement modules while keeping the CLIP backbone frozen.
 ```bash
-  python tools/train.py --cfg config/voc_train_ori_cfg.yaml
-  # Checkpoints will be saved in 'experiments/'
+    python tools/train.py --cfg config/voc_train_ori_cfg.yaml
+    # Checkpoints will be saved in 'experiments/'
 ```
 ## Testing
 
