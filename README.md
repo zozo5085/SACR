@@ -28,7 +28,6 @@ Generate the initial pseudo labels using CLIP-CAM or similar techniques.
 ```
 ## Step 3: Train SACR
 Train the refinement modules while keeping the CLIP backbone frozen.
-#Checkpoints will be saved in 'experiments/'
 ```bash
   python tools/train.py --cfg config/voc_train_ori_cfg.yaml
   # Checkpoints will be saved in 'experiments/'
