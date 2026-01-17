@@ -38,7 +38,6 @@ Train the refinement modules while keeping the CLIP backbone frozen.
 Evaluate the trained model on the validation set.
 ```bash
     python tools/test.py --cfg config/voc_test_ori_cfg.yaml --load checkpoints/best_model.pth --save_vis
-    # Results (mIoU) will be printed to console
     # Visualization images (if --save_vis is used) will be saved in 'test_run_.../visualization/'
 ```
 
